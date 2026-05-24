@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude code
+.claude/
+skills-lock.json
+
+# misc artifacts
+verify-screenshot.png
