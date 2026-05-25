@@ -16,13 +16,13 @@ export function SecondaryButton({
     <button
       className={cn(
         "inline-flex items-center justify-center",
-        "px-4 py-2 min-w-[96px]",
+        "px-4 py-2",
         "rounded-full",
-        "border border-black/8 dark:border-white/8",
+        "border border-black/16 dark:border-white/16",
         "font-sans font-medium text-[16px] leading-[20px] text-black dark:text-white whitespace-nowrap",
         "bg-white dark:bg-ds-neutral-950",
-        "transition-[colors,transform] duration-150 ease-ds",
-        "active:scale-[0.97]",
+        "transition-[background-color,scale] duration-150 ease-ds",
+        "active:scale-[0.96]",
         "hfine:hover:bg-ds-neutral-100 dark:hfine:hover:bg-ds-neutral-900",
         "active:bg-ds-neutral-400 dark:active:bg-ds-neutral-700",
         "cursor-pointer",

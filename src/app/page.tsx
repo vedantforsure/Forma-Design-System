@@ -5,10 +5,11 @@ import { GhostButton } from "@/components/design-system/ghost-button";
 import { IconButton } from "@/components/design-system/icon-button";
 import { ThemeToggle } from "@/components/design-system/theme-toggle";
 import { MotionSwatch } from "@/components/design-system/motion-swatch";
-import { UploadForm } from "@/components/design-system/upload-form";
-import { PreferencesForm } from "@/components/design-system/preferences-form";
-import { RadioDropdown } from "@/components/design-system/radio-dropdown";
+import { ShowcaseForm } from "@/components/design-system/showcase-form";
 import { NavDropdown } from "@/components/design-system/nav-dropdown";
+import { ColorSwatch } from "@/components/design-system/color-swatch";
+import { ContactCard } from "@/components/design-system/contact-card";
+import { CreatorHoverCard } from "@/components/design-system/creator-hover-card";
 
 // ── Foundations data ──────────────────────────────────────────────────────────
 
@@ -36,30 +37,20 @@ const semantics = [
 ];
 
 const typeScale = [
-  { name: "Display", size: "36px", lineHeight: "40px", weight: "600", sample: "The quick brown fox" },
-  { name: "H1",      size: "30px", lineHeight: "36px", weight: "600", sample: "The quick brown fox" },
-  { name: "H2",      size: "24px", lineHeight: "32px", weight: "600", sample: "The quick brown fox" },
-  { name: "H3",      size: "20px", lineHeight: "28px", weight: "500", sample: "The quick brown fox" },
-  { name: "H4",      size: "16px", lineHeight: "24px", weight: "500", sample: "The quick brown fox" },
-  { name: "Body",    size: "14px", lineHeight: "20px", weight: "400", sample: "The quick brown fox jumps over the lazy dog" },
-  { name: "Small",   size: "13px", lineHeight: "18px", weight: "400", sample: "The quick brown fox jumps over the lazy dog" },
-  { name: "Label",   size: "12px", lineHeight: "16px", weight: "500", sample: "UPPERCASE LABEL" },
-  { name: "Caption", size: "11px", lineHeight: "16px", weight: "400", sample: "Supporting caption text" },
+  { name: "Display", size: "30px", lineHeight: "32px", weight: "500", letterSpacing: "-0.6px", sample: "The quick brown fox" },
+  { name: "H1",      size: "24px", lineHeight: "30px", weight: "500", letterSpacing: "",        sample: "The quick brown fox" },
+  { name: "H2",      size: "14px", lineHeight: "18px", weight: "500", letterSpacing: "0.4px",  sample: "The quick brown fox" },
+  { name: "Body",    size: "14px", lineHeight: "20px", weight: "500", letterSpacing: "0.4px",  sample: "The quick brown fox jumps over the lazy dog", color: "text-ds-neutral-600 dark:text-ds-neutral-500" },
+  { name: "Small",   size: "14px", lineHeight: "18px", weight: "500", letterSpacing: "0.6px",  sample: "The quick brown fox jumps over the lazy dog", color: "text-ds-neutral-450" },
+  { name: "Buttons", size: "16px", lineHeight: "20px", weight: "500", letterSpacing: "",       sample: "Button label" },
 ];
 
-const spacingScale = [
-  { token: "1",  px: 4  },
-  { token: "2",  px: 8  },
-  { token: "3",  px: 12 },
-  { token: "4",  px: 16 },
-  { token: "5",  px: 20 },
-  { token: "6",  px: 24 },
-  { token: "8",  px: 32 },
-  { token: "10", px: 40 },
-  { token: "12", px: 48 },
-  { token: "16", px: 64 },
-  { token: "20", px: 80 },
-  { token: "24", px: 96 },
+const spacingTokens = [
+  { name: "xs", px: 4,   usage: "Label to content (h6)" },
+  { name: "sm", px: 8,   usage: "Heading to content (h4+), between buttons" },
+  { name: "md", px: 12,  usage: "Related fields within a group" },
+  { name: "lg", px: 20,  usage: "Subsections within a component, card padding" },
+  { name: "xl", px: 100, usage: "Major page sections" },
 ];
 
 const shadows = [
@@ -161,81 +152,72 @@ export default function Home() {
       <main className="px-4 py-10 pb-28 sm:px-16 sm:py-20 sm:pb-24">
 
         {/* Header */}
-        <div className="flex items-start justify-between mb-10 sm:mb-20">
+        <div className="flex items-start justify-between">
           <div>
             {/* Label */}
-            <p className="text-[12px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-600 dark:text-ds-neutral-500 mb-3">
+            <p className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-3">
               Design System
             </p>
             {/* Display */}
-            <h1 className="text-[36px] leading-[40px] font-semibold text-ds-neutral-1000 dark:text-ds-neutral-0">
+            <h1 className="text-[30px] leading-[32px] font-medium tracking-[-0.6px] text-ds-neutral-1000 dark:text-ds-neutral-0 text-balance">
               Components
             </h1>
           </div>
           <ThemeToggle />
         </div>
 
-        <div className="h-px bg-neutral-100 dark:bg-neutral-800 mb-10 sm:mb-16" />
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Colors ── */}
-        <section className="mb-12 sm:mb-20">
-          <h2 className="text-[12px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-600 dark:text-ds-neutral-500 mb-10">
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Colors
           </h2>
           <div className="flex flex-col gap-10">
             <div>
               {/* Caption sub-label */}
-              <p className="text-[11px] leading-[16px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-4">Neutral</p>
+              <p className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-4">Neutral</p>
               <div className="flex gap-2 flex-wrap">
                 {neutrals.map((c) => (
-                  <div key={c.token} className="flex flex-col gap-1.5 w-14">
-                    <div className="h-10 w-full rounded-lg border border-black/6 dark:border-white/6" style={{ backgroundColor: c.hex }} />
-                    <span className="text-[11px] leading-[16px] text-neutral-500 dark:text-ds-neutral-600 dark:text-ds-neutral-500">{c.token}</span>
-                    <span className="text-[11px] leading-[16px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">{c.hex}</span>
-                  </div>
+                  <ColorSwatch key={c.token} label={c.token} hex={c.hex} />
                 ))}
               </div>
             </div>
             <div>
-              <p className="text-[11px] leading-[16px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-4">Semantic</p>
+              <p className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-4">Semantic</p>
               <div className="flex gap-2">
                 {semantics.map((c) => (
-                  <div key={c.label} className="flex flex-col gap-1.5 w-14">
-                    <div className="h-10 w-full rounded-lg border border-black/6" style={{ backgroundColor: c.hex }} />
-                    <span className="text-[11px] leading-[16px] text-neutral-500 dark:text-ds-neutral-600 dark:text-ds-neutral-500">{c.label}</span>
-                    <span className="text-[11px] leading-[16px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">{c.hex}</span>
-                  </div>
+                  <ColorSwatch key={c.label} label={c.label} hex={c.hex} />
                 ))}
               </div>
             </div>
           </div>
         </section>
 
-        <div className="h-px bg-neutral-100 dark:bg-neutral-800 mb-10 sm:mb-16" />
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Typography ── */}
-        <section className="mb-12 sm:mb-20">
-          <h2 className="text-[12px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-600 dark:text-ds-neutral-500 mb-10">
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Typography
           </h2>
           <div className="flex flex-col divide-y divide-neutral-100 dark:divide-neutral-800">
             {typeScale.map((t) => (
               <div key={t.name} className="flex flex-col sm:flex-row sm:items-baseline items-start gap-2 sm:gap-12 py-4">
                 <div className="w-full sm:w-40 sm:shrink-0 flex flex-col gap-1">
-                  {/* Body for token name */}
-                  <span className="text-[14px] leading-[20px] text-ds-neutral-1000 dark:text-ds-neutral-0">{t.name}</span>
+                  <span className="text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{t.name}</span>
                   {/* Caption for spec */}
-                  <span className="text-[11px] leading-[16px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">
-                    {t.size} / {t.lineHeight} / {t.weight}
+                  <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">
+                    {t.size} / {t.lineHeight} / {t.weight}{t.letterSpacing ? ` / ${t.letterSpacing}` : ""}
                   </span>
                 </div>
                 <p
-                  className="text-ds-neutral-1000 dark:text-ds-neutral-0"
+                  className={t.color ?? "text-ds-neutral-1000 dark:text-ds-neutral-0"}
                   style={{
                     fontSize: t.size,
                     lineHeight: t.lineHeight,
                     fontWeight: t.weight,
-                    letterSpacing: t.name === "Label" ? "0.08em" : undefined,
+                    letterSpacing: t.letterSpacing || undefined,
                   }}
                 >
                   {t.sample}
@@ -245,31 +227,30 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="h-px bg-neutral-100 dark:bg-neutral-800 mb-10 sm:mb-16" />
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Spacing ── */}
-        <section className="mb-12 sm:mb-20">
-          <h2 className="text-[12px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-600 dark:text-ds-neutral-500 mb-10">
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Spacing
           </h2>
           <div className="flex flex-col gap-3">
-            {spacingScale.map((s) => (
-              <div key={s.token} className="flex items-center gap-6">
-                <div className="w-20 shrink-0 flex justify-between">
-                  <span className="text-[11px] leading-[16px] text-neutral-500 dark:text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">{s.token}</span>
-                  <span className="text-[11px] leading-[16px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">{s.px}px</span>
-                </div>
-                <div className="h-5 rounded-sm bg-neutral-900 dark:bg-neutral-100" style={{ width: s.px }} />
+            {spacingTokens.map((s) => (
+              <div key={s.name} className="flex items-center gap-8">
+                <span className="w-6 shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{s.name}</span>
+                <span className="w-12 shrink-0 text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500">{s.px}px</span>
+                <div className="h-[6px] rounded-full bg-ds-neutral-1000 dark:bg-ds-neutral-0 shrink-0" style={{ width: s.px }} />
+                <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">{s.usage}</span>
               </div>
             ))}
           </div>
         </section>
 
-        <div className="h-px bg-neutral-100 dark:bg-neutral-800 mb-10 sm:mb-16" />
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Shadows ── */}
-        <section className="mb-12 sm:mb-20">
-          <h2 className="text-[12px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-600 dark:text-ds-neutral-500 mb-10">
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Shadows
           </h2>
           <div className="flex gap-8 flex-wrap">
@@ -277,73 +258,87 @@ export default function Home() {
               <div key={s.name} className="flex flex-col gap-4">
                 <div className="w-32 h-20 rounded-xl bg-white dark:bg-neutral-800" style={{ boxShadow: s.value }} />
                 <div className="flex flex-col gap-0.5">
-                  <span className="text-[14px] leading-[20px] text-ds-neutral-1000 dark:text-ds-neutral-0">{s.name}</span>
-                  <span className="text-[11px] leading-[16px] text-ds-neutral-600 dark:text-ds-neutral-500">{s.usage}</span>
+                  <span className="text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{s.name}</span>
+                  <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">{s.usage}</span>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <div className="h-px bg-neutral-100 dark:bg-neutral-800 mb-10 sm:mb-16" />
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Motion ── */}
-        <section className="mb-12 sm:mb-20">
-          <h2 className="text-[12px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-600 dark:text-ds-neutral-500 mb-10">
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Motion
           </h2>
           <div className="flex flex-col gap-6">
             {motionTokens.map((m) => (
               <div key={m.name} className="flex flex-col sm:flex-row sm:items-center items-start gap-3 sm:gap-10">
                 <div className="w-full sm:w-40 sm:shrink-0 flex flex-col gap-1">
-                  <span className="text-[14px] leading-[20px] text-ds-neutral-1000 dark:text-ds-neutral-0">{m.name}</span>
-                  <span className="text-[11px] leading-[16px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">{m.duration} · {m.easing}</span>
+                  <span className="text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{m.name}</span>
+                  <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">{m.duration} · {m.easing}</span>
                 </div>
                 <MotionSwatch duration={m.duration} easing={m.easing} />
-                <span className="text-[11px] leading-[16px] text-ds-neutral-600 dark:text-ds-neutral-500">{m.usage}</span>
+                <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500">{m.usage}</span>
               </div>
             ))}
           </div>
         </section>
 
-        <div className="h-px bg-neutral-100 dark:bg-neutral-800 mb-10 sm:mb-16" />
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Forms ── */}
-        <section className="mb-12 sm:mb-20">
-          <h2 className="text-[12px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-600 dark:text-ds-neutral-500 mb-10">
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Forms
           </h2>
-          <div className="flex flex-col gap-8">
-            <ComponentRow label="Radio Dropdown">
-              <RadioDropdown
-                label="Sort by"
-                defaultValue="newest"
-                options={[
-                  { value: "newest", label: "Newer to Older" },
-                  { value: "oldest", label: "Older to Newer" },
-                  { value: "active",  label: "Recently Active" },
-                  { value: "priority", label: "Priority" },
-                ]}
-              />
-            </ComponentRow>
-            <UploadForm />
-            <PreferencesForm />
-          </div>
+          <ShowcaseForm />
         </section>
 
-        <div className="h-px bg-neutral-100 dark:bg-neutral-800 mb-10 sm:mb-16" />
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Buttons ── */}
-        <section className="mb-12 sm:mb-20">
-          <h2 className="text-[12px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-600 dark:text-ds-neutral-500 mb-10">
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Buttons
           </h2>
           <div className="flex flex-col gap-8">
-            <ComponentRow label="Primary CTA"><PrimaryButton>Proceed</PrimaryButton></ComponentRow>
-            <ComponentRow label="Secondary CTA"><SecondaryButton>Go Back</SecondaryButton></ComponentRow>
+            <ComponentRow label="Primary CTA"><PrimaryButton>Click me</PrimaryButton></ComponentRow>
+            <ComponentRow label="Secondary CTA"><SecondaryButton>Click me</SecondaryButton></ComponentRow>
             <ComponentRow label="Destructive"><DestructiveButton>Delete</DestructiveButton></ComponentRow>
             <ComponentRow label="Ghost"><GhostButton>Cancel</GhostButton></ComponentRow>
             <ComponentRow label="Icon Button"><IconButton label="Add" /></ComponentRow>
+          </div>
+        </section>
+
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
+
+        {/* ── Interactions ── */}
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+            Interactions
+          </h2>
+          <div className="flex flex-col gap-8">
+            <ComponentRow label="Creator Hover Card">
+              <div className="py-20">
+                <p className="text-[15px] leading-[24px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500">
+                  Made with love by{" "}
+                  <CreatorHoverCard
+                    name="Vedant"
+                    handle="@vedantdzn"
+                    avatarSrc="/x-pfp.jpg"
+                    bio="Product designer"
+                    following={124}
+                    followers={150}
+                    verified
+                  >
+                    Vedant
+                  </CreatorHoverCard>
+                </p>
+              </div>
+            </ComponentRow>
           </div>
         </section>
 
@@ -355,10 +350,11 @@ export default function Home() {
   );
 }
 
+
 function ComponentRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center items-start gap-2 sm:gap-12">
-      <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[20px] text-ds-neutral-600 dark:text-ds-neutral-500">
+      <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
         {label}
       </span>
       <div className="flex items-center gap-4">{children}</div>

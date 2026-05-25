@@ -26,7 +26,7 @@ export function RadioGroup({ label, options, defaultValue = "", onChange }: Radi
 
   return (
     <div className="flex flex-col gap-3">
-      <p className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+      <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
         {label}
       </p>
       <div className="flex flex-col gap-3">
@@ -57,11 +57,11 @@ export function RadioGroup({ label, options, defaultValue = "", onChange }: Radi
                 <div className="radio-dot w-2.5 h-2.5 rounded-full bg-ds-neutral-1000 dark:bg-ds-neutral-0" />
               </div>
               <div className="flex flex-col gap-0.5">
-                <span className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+                <span className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
                   {opt.label}
                 </span>
                 {opt.description && (
-                  <span className="text-[14px] leading-[20px] text-ds-neutral-600 dark:text-ds-neutral-500">
+                  <span className="text-[14px] leading-[20px] text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">
                     {opt.description}
                   </span>
                 )}

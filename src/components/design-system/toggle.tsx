@@ -30,12 +30,12 @@ export function Toggle({ label, description, defaultChecked = false, onChange }:
         className={[
           "relative w-10 h-6 rounded-full shrink-0 mt-[2px] cursor-pointer border-[1.5px]",
           "outline-none focus-visible:ring-2 focus-visible:ring-black/40 dark:focus-visible:ring-white/40",
-          "active:scale-[0.97]",
+          "active:scale-[0.96]",
           checked
             ? "bg-ds-neutral-1000 dark:bg-ds-neutral-0 border-transparent"
             : "bg-white dark:bg-ds-neutral-950 border-black/20 dark:border-white/20",
         ].join(" ")}
-        style={{ transition: "background-color 150ms cubic-bezier(0.23, 1, 0.32, 1), border-color 150ms cubic-bezier(0.23, 1, 0.32, 1), transform 150ms cubic-bezier(0.23, 1, 0.32, 1)" }}
+        style={{ transition: "background-color 150ms cubic-bezier(0.23, 1, 0.32, 1), border-color 150ms cubic-bezier(0.23, 1, 0.32, 1), transform 150ms cubic-bezier(0.23, 1, 0.32, 1), scale 150ms cubic-bezier(0.23, 1, 0.32, 1)" }}
       >
         <span
           aria-hidden
@@ -52,11 +52,11 @@ export function Toggle({ label, description, defaultChecked = false, onChange }:
         />
       </button>
       <label htmlFor={id} className="flex flex-col gap-0.5 cursor-pointer" onClick={toggle}>
-        <span className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+        <span className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
           {label}
         </span>
         {description && (
-          <span className="text-[14px] leading-[20px] text-ds-neutral-600 dark:text-ds-neutral-500">
+          <span className="text-[14px] leading-[20px] text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">
             {description}
           </span>
         )}

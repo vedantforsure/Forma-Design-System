@@ -16,7 +16,7 @@ export function UploadForm() {
       {/* Header */}
       <div className="flex items-center gap-2">
         <FileText className="w-7 h-7 text-ds-neutral-1000 dark:text-ds-neutral-0 shrink-0" strokeWidth={1.5} />
-        <p className="flex-1 text-[20px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+        <p className="flex-1 text-[20px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 text-balance">
           Upload files
         </p>
         <IconButton label="Close" icon={<X className="w-4 h-4" strokeWidth={2} />} />
@@ -32,10 +32,10 @@ export function UploadForm() {
 
         {/* Access section */}
         <div className="flex flex-col gap-2">
-          <p className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+          <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
             Document access
           </p>
-          <p className="text-[16px] leading-[20px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500">
+          <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">
             Select who you would like to have access to this document. Visit our help centre to learn more about uploaded document access.
           </p>
         </div>

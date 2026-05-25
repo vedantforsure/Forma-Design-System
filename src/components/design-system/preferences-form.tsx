@@ -15,7 +15,7 @@ export function PreferencesForm() {
       {/* Header */}
       <div className="flex items-center gap-2">
         <Settings className="w-7 h-7 text-ds-neutral-1000 dark:text-ds-neutral-0 shrink-0" strokeWidth={1.5} />
-        <p className="flex-1 text-[20px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+        <p className="flex-1 text-[20px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 text-balance">
           Preferences
         </p>
       </div>
@@ -42,7 +42,7 @@ export function PreferencesForm() {
 
         {/* Checkboxes */}
         <div className="flex flex-col gap-4">
-          <p className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+          <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
             Email me about
           </p>
           <Checkbox label="Product updates"  description="New features and improvements" defaultChecked />
@@ -52,7 +52,7 @@ export function PreferencesForm() {
 
         {/* Toggles */}
         <div className="flex flex-col gap-4">
-          <p className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+          <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
             Integrations
           </p>
           <Toggle label="Slack notifications" description="Send alerts to your Slack workspace" defaultChecked />

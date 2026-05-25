@@ -17,7 +17,7 @@ export function PrimaryButton({
       className={cn(
         // Layout
         "inline-flex items-center justify-center",
-        "px-4 py-2 min-w-[96px]",
+        "px-4 py-2",
         // Shape
         "rounded-full",
         // Border
@@ -26,8 +26,8 @@ export function PrimaryButton({
         "font-sans font-medium text-[16px] leading-[20px] text-white dark:text-black whitespace-nowrap",
         // Colors & transitions
         "bg-black dark:bg-white",
-        "transition-[colors,transform] duration-150 ease-ds",
-        "active:scale-[0.97]",
+        "transition-[background-color,scale] duration-150 ease-ds",
+        "active:scale-[0.96]",
         // States
         "hfine:hover:bg-[#333333] dark:hfine:hover:bg-ds-neutral-200",
         "active:bg-[#888888] dark:active:bg-ds-neutral-400",

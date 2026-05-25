@@ -50,11 +50,11 @@ export function Checkbox({ label, description, defaultChecked = false, onChange 
         </svg>
       </div>
       <div className="flex flex-col gap-0.5">
-        <span className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+        <span className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
           {label}
         </span>
         {description && (
-          <span className="text-[14px] leading-[20px] text-ds-neutral-600 dark:text-ds-neutral-500">
+          <span className="text-[14px] leading-[20px] text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">
             {description}
           </span>
         )}

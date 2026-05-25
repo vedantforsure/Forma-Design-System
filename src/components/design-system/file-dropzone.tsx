@@ -30,7 +30,7 @@ export function FileDropzone({
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <span className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+      <span className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
         {label}
       </span>
       <div
@@ -75,11 +75,11 @@ export function FileDropzone({
         </svg>
         <UploadCloud className="w-7 h-7 text-ds-neutral-1000 dark:text-ds-neutral-0" strokeWidth={1.5} />
         <div className="text-center">
-          <p className="text-[16px] leading-[20px] font-medium">
+          <p className="text-[14px] leading-[18px] font-medium">
             <span className="text-ds-neutral-1000 dark:text-ds-neutral-0">Click to upload</span>
             <span className="text-ds-neutral-600 dark:text-ds-neutral-500"> or drag and drop</span>
           </p>
-          <p className="text-[16px] leading-[20px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500 mt-0.5">
+          <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500 mt-0.5">
             {hint}
           </p>
         </div>

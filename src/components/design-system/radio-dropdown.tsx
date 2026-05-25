@@ -32,10 +32,13 @@ export function RadioDropdown({ label, options, defaultValue = "", onChange }: R
     return () => document.removeEventListener("mousedown", handler);
   }, [open]);
 
+  const selectedLabel = options.find((o) => o.value === selected)?.label;
+
   const select = (value: string) => {
-    setSelected(value);
-    onChange?.(value);
-    setOpen(false);
+    const next = selected === value ? "" : value;
+    setSelected(next);
+    onChange?.(next);
+    if (next) setOpen(false);
   };
 
   return (
@@ -49,18 +52,17 @@ export function RadioDropdown({ label, options, defaultValue = "", onChange }: R
         onClick={() => setOpen((v) => !v)}
         className={[
           "h-[40px] pl-[14px] pr-[10px] flex items-center gap-2",
-          "rounded-full border border-black/8 dark:border-white/8",
-          "shadow-[0px_0.5px_2px_0px_rgba(0,0,0,0.08)]",
-          "text-[16px] leading-[22px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0",
+          "rounded-full border border-black/16 dark:border-white/16",
+          "font-sans font-medium text-[16px] leading-[20px] text-black dark:text-white",
           "cursor-pointer select-none outline-none",
-          "transition-[colors,transform] duration-150 ease-ds",
-          "active:scale-[0.97]",
+          "transition-[background-color,scale] duration-150 ease-ds",
+          "active:scale-[0.96]",
           open
             ? "bg-ds-neutral-100 dark:bg-ds-neutral-800"
-            : "bg-white dark:bg-ds-neutral-950 hfine:hover:bg-ds-neutral-50 dark:hfine:hover:bg-ds-neutral-900",
+            : "bg-white dark:bg-ds-neutral-950 hfine:hover:bg-ds-neutral-100 dark:hfine:hover:bg-ds-neutral-900 active:bg-ds-neutral-400 dark:active:bg-ds-neutral-700",
         ].join(" ")}
       >
-        <span className="whitespace-nowrap">{label}</span>
+        <span className="whitespace-nowrap">{selectedLabel ?? label}</span>
         <ChevronDown
           className="w-4 h-4 shrink-0"
           strokeWidth={2}
@@ -104,7 +106,7 @@ export function RadioDropdown({ label, options, defaultValue = "", onChange }: R
                   : "bg-white dark:bg-ds-neutral-900 hover:bg-ds-neutral-100 dark:hover:bg-ds-neutral-800 active:bg-ds-neutral-100 dark:active:bg-ds-neutral-800",
               ].join(" ")}
             >
-              <span className="flex-1 text-[16px] leading-[22px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 min-w-0">
+              <span className="flex-1 text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 min-w-0">
                 {opt.label}
               </span>
               <div
@@ -116,9 +118,15 @@ export function RadioDropdown({ label, options, defaultValue = "", onChange }: R
                     : "border-black/20 dark:border-white/20",
                 ].join(" ")}
               >
-                {isSelected && (
-                  <div className="w-[10px] h-[10px] rounded-full bg-ds-neutral-1000 dark:bg-ds-neutral-0" />
-                )}
+                <div
+                  className="w-[10px] h-[10px] rounded-full bg-ds-neutral-1000 dark:bg-ds-neutral-0"
+                  style={{
+                    opacity: isSelected ? 1 : 0,
+                    transform: isSelected ? "scale(1)" : "scale(0.25)",
+                    filter: isSelected ? "blur(0px)" : "blur(4px)",
+                    transition: "opacity 150ms cubic-bezier(0.23,1,0.32,1), transform 150ms cubic-bezier(0.23,1,0.32,1), filter 150ms cubic-bezier(0.23,1,0.32,1)",
+                  }}
+                />
               </div>
             </button>
           );

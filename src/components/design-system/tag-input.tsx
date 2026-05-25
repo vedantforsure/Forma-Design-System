@@ -51,7 +51,7 @@ export function TagInput({
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <span className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+      <span className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
         {label}
         {optional && (
           <span className="text-ds-neutral-500 font-normal"> (Optional)</span>
@@ -81,7 +81,7 @@ export function TagInput({
             {tag}
             <button
               onClick={(e) => { e.stopPropagation(); removeTag(tag); }}
-              className="text-ds-neutral-500 hfine:hover:text-ds-neutral-1000 dark:hfine:hover:text-ds-neutral-0 transition-colors"
+              className="-mr-1 p-1 rounded-full text-ds-neutral-500 hfine:hover:text-ds-neutral-1000 dark:hfine:hover:text-ds-neutral-0 transition-colors"
               aria-label={`Remove ${tag}`}
             >
               <X className="w-3.5 h-3.5" strokeWidth={2} />
@@ -96,7 +96,7 @@ export function TagInput({
           onKeyDown={handleKeyDown}
           onBlur={() => addTag(input)}
           placeholder={tags.length === 0 ? "Add tags…" : ""}
-          className="flex-1 min-w-[80px] text-[16px] leading-[20px] font-medium bg-transparent outline-none text-ds-neutral-1000 dark:text-ds-neutral-0 placeholder:text-ds-neutral-400"
+          className="flex-1 min-w-[80px] text-[14px] leading-[18px] font-medium bg-transparent outline-none text-ds-neutral-1000 dark:text-ds-neutral-0 placeholder:text-ds-neutral-400"
         />
 
         <ChevronDown className="w-5 h-5 text-ds-neutral-500 shrink-0 ml-auto" strokeWidth={1.5} />

@@ -19,11 +19,11 @@ export function IconButton({
       aria-label={label}
       className={cn(
         "inline-flex items-center justify-center",
-        "w-9 h-9 rounded-full shrink-0",
+        "w-10 h-10 rounded-full shrink-0",
         "text-black dark:text-white",
         "bg-transparent",
-        "transition-[colors,transform] duration-150 ease-ds",
-        "active:scale-[0.97]",
+        "transition-[background-color,scale] duration-150 ease-ds",
+        "active:scale-[0.96]",
         "hfine:hover:bg-ds-neutral-100 dark:hfine:hover:bg-ds-neutral-100/10",
         "active:bg-ds-neutral-400 dark:active:bg-ds-neutral-400/20",
         "cursor-pointer select-none",

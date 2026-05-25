@@ -14,7 +14,7 @@ export function TextInput({ label, className, id, ...props }: TextInputProps) {
     <div className="flex flex-col gap-2 w-full">
       <label
         htmlFor={inputId}
-        className="text-[16px] leading-[24px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0"
+        className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0"
       >
         {label}
       </label>
@@ -23,7 +23,7 @@ export function TextInput({ label, className, id, ...props }: TextInputProps) {
         className={cn(
           "w-full rounded-full px-4 py-3",
           "border-[1.5px] border-black/12 dark:border-white/12",
-          "text-[16px] leading-[20px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0",
+          "text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0",
           "placeholder:text-ds-neutral-500 dark:placeholder:text-ds-neutral-600",
           "bg-white dark:bg-ds-neutral-950",
           "outline-none",
