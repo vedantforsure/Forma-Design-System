@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronUp } from "lucide-react";
 
-interface ChecklistItem { label: string; done: boolean; }
+interface ChecklistItem { label: string; done: boolean; sectionId?: string; }
 interface ChecklistGroup { section: string; items: ChecklistItem[]; }
 
 interface NavDropdownProps {
@@ -62,7 +62,21 @@ export function NavDropdown({ checklist, doneItems, totalItems }: NavDropdownPro
               </p>
               <div className="flex flex-col">
                 {group.items.map((item) => (
-                  <div key={item.label} className="flex items-center gap-2.5 py-[5px] px-2.5 rounded-[10px]">
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => {
+                      if (item.sectionId) {
+                        document.getElementById(item.sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                        setOpen(false);
+                      }
+                    }}
+                    className={[
+                      "flex items-center gap-2.5 py-[5px] px-2.5 rounded-[10px] w-full text-left",
+                      "transition-colors duration-150",
+                      item.sectionId ? "cursor-pointer hfine:hover:bg-ds-neutral-100 dark:hfine:hover:bg-ds-neutral-800" : "cursor-default",
+                    ].join(" ")}
+                  >
                     <div
                       className={[
                         "w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0",
@@ -93,7 +107,7 @@ export function NavDropdown({ checklist, doneItems, totalItems }: NavDropdownPro
                     >
                       {item.label}
                     </span>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>

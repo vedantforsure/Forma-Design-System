@@ -10,6 +10,17 @@ import { NavDropdown } from "@/components/design-system/nav-dropdown";
 import { ColorSwatch } from "@/components/design-system/color-swatch";
 import { ContactCard } from "@/components/design-system/contact-card";
 import { CreatorHoverCard } from "@/components/design-system/creator-hover-card";
+import { ToastDemo } from "@/components/design-system/toast-demo";
+import { OverlaysDemo } from "@/components/design-system/overlays-demo";
+import { Alert } from "@/components/design-system/alert";
+import { Badge } from "@/components/design-system/badge";
+import { TooltipDemo } from "@/components/design-system/tooltip-demo";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/design-system/card";
+import { Avatar } from "@/components/design-system/avatar";
+import { TagDemo } from "@/components/design-system/tag-demo";
+import { ComponentTableDemo } from "@/components/design-system/component-table-demo";
+import { Tabs } from "@/components/design-system/tabs";
+import { Breadcrumb } from "@/components/design-system/breadcrumb";
 
 // ── Foundations data ──────────────────────────────────────────────────────────
 
@@ -38,10 +49,10 @@ const semantics = [
 
 const typeScale = [
   { name: "Display", size: "30px", lineHeight: "32px", weight: "500", letterSpacing: "-0.6px", sample: "The quick brown fox" },
-  { name: "H1",      size: "24px", lineHeight: "30px", weight: "500", letterSpacing: "",        sample: "The quick brown fox" },
-  { name: "H2",      size: "14px", lineHeight: "18px", weight: "500", letterSpacing: "0.4px",  sample: "The quick brown fox" },
-  { name: "Body",    size: "14px", lineHeight: "20px", weight: "500", letterSpacing: "0.4px",  sample: "The quick brown fox jumps over the lazy dog", color: "text-ds-neutral-600 dark:text-ds-neutral-500" },
-  { name: "Small",   size: "14px", lineHeight: "18px", weight: "500", letterSpacing: "0.6px",  sample: "The quick brown fox jumps over the lazy dog", color: "text-ds-neutral-450" },
+  { name: "H1",      size: "24px", lineHeight: "30px", weight: "500", letterSpacing: "-0.2px", sample: "The quick brown fox" },
+  { name: "H2",      size: "14px", lineHeight: "18px", weight: "500", letterSpacing: "",        sample: "The quick brown fox" },
+  { name: "Body",    size: "14px", lineHeight: "20px", weight: "500", letterSpacing: "",        sample: "The quick brown fox jumps over the lazy dog", color: "text-ds-neutral-600 dark:text-ds-neutral-500" },
+  { name: "Small",   size: "14px", lineHeight: "18px", weight: "500", letterSpacing: "",        sample: "The quick brown fox jumps over the lazy dog", color: "text-ds-neutral-450" },
   { name: "Buttons", size: "16px", lineHeight: "20px", weight: "500", letterSpacing: "",       sample: "Button label" },
 ];
 
@@ -72,65 +83,65 @@ const checklist = [
   {
     section: "Foundations",
     items: [
-      { label: "Colors", done: true },
-      { label: "Typography", done: true },
-      { label: "Spacing", done: true },
-      { label: "Shadows", done: true },
-      { label: "Motion", done: true },
+      { label: "Colors",     done: true, sectionId: "colors" },
+      { label: "Typography", done: true, sectionId: "typography" },
+      { label: "Spacing",    done: true, sectionId: "spacing" },
+      { label: "Shadows",    done: true, sectionId: "shadows" },
+      { label: "Motion",     done: true, sectionId: "motion" },
     ],
   },
   {
     section: "Buttons",
     items: [
-      { label: "Primary CTA", done: true },
-      { label: "Secondary CTA", done: true },
-      { label: "Destructive", done: true },
-      { label: "Ghost", done: true },
-      { label: "Icon Button", done: true },
+      { label: "Primary CTA",   done: true, sectionId: "buttons" },
+      { label: "Secondary CTA", done: true, sectionId: "buttons" },
+      { label: "Destructive",   done: true, sectionId: "buttons" },
+      { label: "Ghost",         done: true, sectionId: "buttons" },
+      { label: "Icon Button",   done: true, sectionId: "buttons" },
     ],
   },
   {
     section: "Forms",
     items: [
-      { label: "Text Input", done: true },
-      { label: "Textarea", done: true },
-      { label: "Select", done: true },
-      { label: "Checkbox", done: true },
-      { label: "Radio", done: true },
-      { label: "Toggle", done: true },
+      { label: "Text Input", done: true, sectionId: "forms" },
+      { label: "Textarea",   done: true, sectionId: "forms" },
+      { label: "Select",     done: true, sectionId: "forms" },
+      { label: "Checkbox",   done: true, sectionId: "forms" },
+      { label: "Radio",      done: true, sectionId: "forms" },
+      { label: "Toggle",     done: true, sectionId: "forms" },
     ],
   },
   {
     section: "Feedback",
     items: [
-      { label: "Toast", done: false },
-      { label: "Alert", done: false },
-      { label: "Badge", done: false },
-      { label: "Tooltip", done: false },
+      { label: "Toast",   done: true, sectionId: "feedback-toast" },
+      { label: "Alert",   done: true, sectionId: "feedback-alert" },
+      { label: "Badge",   done: true, sectionId: "feedback-badge" },
+      { label: "Tooltip", done: true, sectionId: "feedback-tooltip" },
     ],
   },
   {
     section: "Overlays",
     items: [
-      { label: "Modal", done: false },
-      { label: "Drawer", done: false },
-      { label: "Popover", done: false },
+      { label: "Modal",   done: true, sectionId: "overlays" },
+      { label: "Drawer",  done: true, sectionId: "overlays" },
+      { label: "Popover", done: true, sectionId: "overlays" },
     ],
   },
   {
     section: "Data Display",
     items: [
-      { label: "Card", done: false },
-      { label: "Avatar", done: false },
-      { label: "Tag / Chip", done: false },
-      { label: "Table", done: false },
+      { label: "Card",       done: true, sectionId: "dd-card" },
+      { label: "Avatar",     done: true, sectionId: "dd-avatar" },
+      { label: "Tag / Chip", done: true, sectionId: "dd-tag" },
+      { label: "Table",      done: true, sectionId: "dd-table" },
     ],
   },
   {
     section: "Navigation",
     items: [
-      { label: "Tabs", done: false },
-      { label: "Breadcrumb", done: false },
+      { label: "Tabs",       done: true, sectionId: "nav-tabs" },
+      { label: "Breadcrumb", done: true, sectionId: "nav-breadcrumb" },
     ],
   },
 ];
@@ -169,7 +180,7 @@ export default function Home() {
         <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Colors ── */}
-        <section>
+        <section id="colors" className="scroll-mt-8">
           <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Colors
           </h2>
@@ -197,7 +208,7 @@ export default function Home() {
         <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Typography ── */}
-        <section>
+        <section id="typography" className="scroll-mt-8">
           <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Typography
           </h2>
@@ -230,7 +241,7 @@ export default function Home() {
         <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Spacing ── */}
-        <section>
+        <section id="spacing" className="scroll-mt-8">
           <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Spacing
           </h2>
@@ -249,7 +260,7 @@ export default function Home() {
         <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Shadows ── */}
-        <section>
+        <section id="shadows" className="scroll-mt-8">
           <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Shadows
           </h2>
@@ -269,7 +280,7 @@ export default function Home() {
         <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Motion ── */}
-        <section>
+        <section id="motion" className="scroll-mt-8">
           <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Motion
           </h2>
@@ -290,7 +301,7 @@ export default function Home() {
         <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Forms ── */}
-        <section>
+        <section id="forms" className="scroll-mt-8">
           <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Forms
           </h2>
@@ -300,7 +311,7 @@ export default function Home() {
         <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
 
         {/* ── Buttons ── */}
-        <section>
+        <section id="buttons" className="scroll-mt-8">
           <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Buttons
           </h2>
@@ -310,6 +321,148 @@ export default function Home() {
             <ComponentRow label="Destructive"><DestructiveButton>Delete</DestructiveButton></ComponentRow>
             <ComponentRow label="Ghost"><GhostButton>Cancel</GhostButton></ComponentRow>
             <ComponentRow label="Icon Button"><IconButton label="Add" /></ComponentRow>
+          </div>
+        </section>
+
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
+
+        {/* ── Feedback ── */}
+        <section id="feedback" className="scroll-mt-8">
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+            Feedback
+          </h2>
+          <div className="flex flex-col gap-8">
+            <ComponentRow id="feedback-toast"   label="Toast"><ToastDemo /></ComponentRow>
+            <ComponentRow id="feedback-tooltip" label="Tooltip"><TooltipDemo /></ComponentRow>
+            <ComponentRow id="feedback-badge"   label="Badge">
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="neutral" label="Neutral" dot />
+                <Badge variant="info"    label="Info"    dot />
+                <Badge variant="success" label="Success" dot />
+                <Badge variant="warning" label="Warning" dot />
+                <Badge variant="error"   label="Error"   dot />
+              </div>
+            </ComponentRow>
+            <div id="feedback-alert" className="flex flex-col sm:flex-row items-start gap-2 sm:gap-12 scroll-mt-8">
+              <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 sm:pt-4">
+                Alert
+              </span>
+              <div className="flex flex-col gap-3 sm:w-[400px]">
+                <Alert variant="info"    title="Heads up" description="Your session will expire in 10 minutes." />
+                <Alert variant="success" title="Changes saved" description="Your profile has been updated successfully." />
+                <Alert variant="warning" title="Unsaved changes" description="You have changes that haven't been saved yet." />
+                <Alert variant="error"   title="Something went wrong" description="We couldn't process your request. Try again." />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
+
+        {/* ── Overlays ── */}
+        <section id="overlays" className="scroll-mt-8">
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+            Overlays
+          </h2>
+          <OverlaysDemo />
+        </section>
+
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
+
+        {/* ── Data Display ── */}
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+            Data Display
+          </h2>
+          <div className="flex flex-col gap-8">
+
+            {/* Card */}
+            <div id="dd-card" className="flex flex-col sm:flex-row items-start gap-2 sm:gap-12 scroll-mt-8">
+              <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
+                Card
+              </span>
+              <Card className="w-[280px]">
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <Avatar src="/x-pfp.jpg" alt="Vedant" size="lg" />
+                    <div className="flex flex-col gap-[2px]">
+                      <CardTitle>Vedant Lad</CardTitle>
+                      <CardDescription>Product Designer</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500">
+                    Building polished, purposeful interfaces that feel natural to use.
+                  </p>
+                </CardContent>
+                <CardFooter>
+                  <PrimaryButton>Follow</PrimaryButton>
+                  <GhostButton>Message</GhostButton>
+                </CardFooter>
+              </Card>
+            </div>
+
+            {/* Avatar */}
+            <ComponentRow id="dd-avatar" label="Avatar">
+              <Avatar src="/x-pfp.jpg" alt="Vedant" size="sm" />
+              <Avatar src="/x-pfp.jpg" alt="Vedant" size="md" />
+              <Avatar src="/x-pfp.jpg" alt="Vedant" size="lg" />
+              <Avatar fallback="VL" size="sm" />
+              <Avatar fallback="VL" size="md" />
+              <Avatar fallback="VL" size="lg" />
+            </ComponentRow>
+
+            {/* Tag / Chip */}
+            <ComponentRow id="dd-tag" label="Tag / Chip">
+              <TagDemo />
+            </ComponentRow>
+
+            {/* Table */}
+            <div id="dd-table" className="flex flex-col sm:flex-row items-start gap-2 sm:gap-12 scroll-mt-8">
+              <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
+                Table
+              </span>
+              <ComponentTableDemo />
+            </div>
+
+          </div>
+        </section>
+
+        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
+
+        {/* ── Navigation ── */}
+        <section>
+          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+            Navigation
+          </h2>
+          <div className="flex flex-col gap-8">
+
+            <div id="nav-tabs" className="flex flex-col sm:flex-row items-start gap-2 sm:gap-12 scroll-mt-8">
+              <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
+                Tabs
+              </span>
+              <Tabs
+                tabs={[
+                  { label: "Overview",    value: "overview" },
+                  { label: "Components",  value: "components" },
+                  { label: "Tokens",      value: "tokens" },
+                  { label: "Changelog",   value: "changelog" },
+                ]}
+                className="w-full sm:max-w-sm"
+              />
+            </div>
+
+            <ComponentRow id="nav-breadcrumb" label="Breadcrumb">
+              <Breadcrumb
+                items={[
+                  { label: "Design System", href: "#" },
+                  { label: "Components",    href: "#" },
+                  { label: "Buttons" },
+                ]}
+              />
+            </ComponentRow>
+
           </div>
         </section>
 
@@ -351,9 +504,9 @@ export default function Home() {
 }
 
 
-function ComponentRow({ label, children }: { label: string; children: React.ReactNode }) {
+function ComponentRow({ label, children, id }: { label: string; children: React.ReactNode; id?: string }) {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center items-start gap-2 sm:gap-12">
+    <div id={id} className="flex flex-col sm:flex-row sm:items-center items-start gap-2 sm:gap-12 scroll-mt-8">
       <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
         {label}
       </span>

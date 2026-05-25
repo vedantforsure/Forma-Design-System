@@ -98,6 +98,24 @@
   --ds-success:     #00CC44;
   --ds-warning:     #FF9900;
   --ds-info:        #2979FF;
+
+  /* Alert colors — light */
+  --alert-info-bg:       hsl(208, 100%, 97%);
+  --alert-info-border:   hsl(221, 91%, 93%);
+  --alert-info-text:     hsl(210, 92%, 45%);
+  --alert-success-bg:    hsl(143, 85%, 96%);
+  --alert-success-border:hsl(145, 92%, 87%);
+  --alert-success-text:  hsl(140, 100%, 27%);
+  --alert-warning-bg:    hsl(49, 100%, 97%);
+  --alert-warning-border:hsl(49, 91%, 84%);
+  --alert-warning-text:  hsl(31, 92%, 45%);
+  --alert-error-bg:      hsl(359, 100%, 97%);
+  --alert-error-border:  hsl(359, 100%, 94%);
+  --alert-error-text:    hsl(360, 100%, 45%);
+  --alert-neutral-bg:    #f2f2f2;
+  --alert-neutral-border:#e0e0e0;
+  --alert-neutral-text:  #444444;
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -134,6 +152,24 @@
 
 .dark {
   color-scheme: dark;
+
+  /* Alert colors — dark */
+  --alert-info-bg:       hsl(215, 100%, 6%);
+  --alert-info-border:   hsl(223, 43%, 17%);
+  --alert-info-text:     hsl(216, 87%, 65%);
+  --alert-success-bg:    hsl(150, 100%, 6%);
+  --alert-success-border:hsl(147, 100%, 12%);
+  --alert-success-text:  hsl(150, 86%, 65%);
+  --alert-warning-bg:    hsl(64, 100%, 6%);
+  --alert-warning-border:hsl(60, 100%, 9%);
+  --alert-warning-text:  hsl(46, 87%, 65%);
+  --alert-error-bg:      hsl(358, 76%, 10%);
+  --alert-error-border:  hsl(357, 89%, 16%);
+  --alert-error-text:    hsl(358, 100%, 81%);
+  --alert-neutral-bg:    #333333;
+  --alert-neutral-border:#444444;
+  --alert-neutral-text:  #c8c8c8;
+
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -207,6 +243,30 @@
   opacity: 1;
   transform: scale(1);
   filter: blur(0px);
+}
+
+/* Headline shimmer — triggered on email submit */
+@keyframes shimmer-headline {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+.headline-shimmer {
+  background: linear-gradient(90deg, #0a0a0a 30%, #0099FF 50%, #0a0a0a 70%);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-headline 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Email capture — success content fade-in */
+.email-capture-success {
+  transition: opacity 280ms ease 120ms;
+  opacity: 1;
+  @starting-style {
+    opacity: 0;
+  }
 }
 
 /* Tag pill enter / exit animation */
