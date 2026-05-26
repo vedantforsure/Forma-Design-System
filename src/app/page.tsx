@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PrimaryButton } from "@/components/design-system/primary-button";
 import { SecondaryButton } from "@/components/design-system/secondary-button";
 import { DestructiveButton } from "@/components/design-system/destructive-button";
@@ -497,7 +498,15 @@ export default function Home() {
 
       </main>
 
-      <NavDropdown checklist={checklist} doneItems={doneItems} totalItems={totalItems} />
+      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3">
+        <Link
+          href="/experiments"
+          className="inline-flex items-center justify-center h-[40px] px-4 rounded-full border border-black/16 dark:border-white/16 font-sans font-medium text-[16px] leading-[20px] text-black dark:text-white whitespace-nowrap bg-white dark:bg-ds-neutral-950 transition-[background-color,scale] duration-150 ease-ds active:scale-[0.96] hfine:hover:bg-ds-neutral-100 dark:hfine:hover:bg-ds-neutral-900 active:bg-ds-neutral-400 dark:active:bg-ds-neutral-700 cursor-pointer select-none"
+        >
+          Experiments
+        </Link>
+        <NavDropdown checklist={checklist} doneItems={doneItems} totalItems={totalItems} />
+      </div>
 
     </div>
   );

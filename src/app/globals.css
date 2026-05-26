@@ -245,10 +245,29 @@
   filter: blur(0px);
 }
 
-/* Headline shimmer — triggered on email submit */
+/* Waitlist theme tokens */
+:root {
+  --waitlist-bg: #ffffff;
+  --waitlist-border: rgba(0, 0, 0, 0.1);
+  --waitlist-text: #111111;
+}
+.dark {
+  --waitlist-bg: #1c1c1c;
+  --waitlist-border: rgba(255, 255, 255, 0.12);
+  --waitlist-text: #f5f5f5;
+}
+
+/* Headline default color + shimmer — triggered on email submit */
+.headline {
+  color: #0F172A;
+}
+.dark .headline {
+  color: #f8fafc;
+}
+
 @keyframes shimmer-headline {
-  from { background-position: 0% 50%; }
-  to   { background-position: 100% 50%; }
+  from { background-position: 100% 50%; }
+  to   { background-position: 0% 50%; }
 }
 
 .headline-shimmer {
@@ -256,8 +275,15 @@
   background-size: 400% 100%;
   -webkit-background-clip: text;
   background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: shimmer-headline 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: shimmer-headline 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.dark .headline-shimmer {
+  background: linear-gradient(90deg, #f8fafc 30%, #0099FF 50%, #f8fafc 70%);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 /* Email capture — success content fade-in */

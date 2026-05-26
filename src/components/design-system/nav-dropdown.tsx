@@ -28,7 +28,7 @@ export function NavDropdown({ checklist, doneItems, totalItems }: NavDropdownPro
   }, [open]);
 
   return (
-    <div ref={containerRef} className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50">
+    <div ref={containerRef} className="relative">
 
       {/* Panel — opens upward from trigger */}
       <div
