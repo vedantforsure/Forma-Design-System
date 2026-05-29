@@ -25,7 +25,14 @@ export default function Experiments() {
               Experiments
             </h1>
           </div>
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <div
+              className="px-2 py-[6px] rounded-[8px] flex items-center justify-center bg-[#f2f2f2] dark:bg-[#333333] text-black dark:text-white text-ds-body font-medium leading-none select-none border border-black/[0.08] dark:border-white/[0.12] shadow-[0_1px_0_rgba(0,0,0,0.08)] dark:shadow-none transition-[color,background-color,border-color,box-shadow] duration-150 ease-ds"
+            >
+              d
+            </div>
+            <ThemeToggle />
+          </div>
         </div>
 
         <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
@@ -38,7 +45,7 @@ export default function Experiments() {
           <div className="flex flex-col gap-8">
             <ComponentRow label="Creator Hover Card" footnote={<Footnote />}>
               <div className="py-20">
-                <p className="text-[15px] leading-[24px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500">
+                <p className="text-ds-body font-medium text-ds-neutral-600 dark:text-ds-neutral-500">
                   Made with love by{" "}
                   <CreatorHoverCard
                     name="Vedant"
@@ -56,7 +63,7 @@ export default function Experiments() {
             </ComponentRow>
 
             <ComponentRow label="Fun Waitlist" footnote={<Footnote />}>
-              <div className="py-12 flex flex-col items-center gap-10 w-fit">
+              <div className="py-12 flex flex-col items-center gap-5 w-fit">
                 <h2
                   className={shimmer ? "headline headline-shimmer" : "headline"}
                   onAnimationEnd={() => setShimmer(false)}
@@ -108,7 +115,7 @@ function ComponentRow({ label, children, id, footnote }: { label: string; childr
 
 function Footnote() {
   return (
-    <p className="text-[12px] leading-[16px] font-medium text-ds-neutral-400 dark:text-ds-neutral-600">
+    <p className="text-ds-body font-medium text-ds-neutral-400 dark:text-ds-neutral-600">
       Recreated from{" "}
       <a href="https://x.com/hours" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline underline-offset-2">
         @hours

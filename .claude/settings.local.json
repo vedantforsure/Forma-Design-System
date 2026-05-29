@@ -18,7 +18,12 @@
       "Bash(npx --yes playwright screenshot --browser chromium http://localhost:3000 /tmp/showcase.png)",
       "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\(JSON.stringify\\({deps: p.dependencies, dev: p.devDependencies}, null, 2\\)\\)\")",
       "Bash(npm install *)",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(mkdir -p __TRACKED_VAR__/.claude/skills)",
+      "Bash(cp -r .claude/skills/design-system-base __TRACKED_VAR__/.claude/skills/)"
     ]
   },
   "enableAllProjectMcpServers": true

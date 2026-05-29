@@ -174,7 +174,14 @@ export default function Home() {
               Components
             </h1>
           </div>
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <div
+              className="px-2 py-[6px] rounded-[8px] flex items-center justify-center bg-[#f2f2f2] dark:bg-[#333333] text-black dark:text-white text-ds-body font-medium leading-none select-none border border-black/[0.08] dark:border-white/[0.12] shadow-[0_1px_0_rgba(0,0,0,0.08)] dark:shadow-none transition-[color,background-color,border-color,box-shadow] duration-150 ease-ds"
+            >
+              d
+            </div>
+            <ThemeToggle />
+          </div>
         </div>
 
         <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
