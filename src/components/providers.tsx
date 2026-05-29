@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ThemeProvider, useTheme } from "next-themes";
 import { Toaster } from "sonner";
@@ -18,8 +18,8 @@ function ToasterWithTheme() {
           boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
         },
         classNames: {
-          title: "font-sans text-[14px] leading-[20px] font-medium tracking-[0.4px]",
-          description: "font-sans text-[14px] leading-[20px] font-medium tracking-[0.4px] opacity-70",
+          title: "font-sans text-ds-body font-medium tracking-[0.4px]",
+          description: "font-sans text-ds-body font-medium tracking-[0.4px] opacity-70",
         },
       }}
     />

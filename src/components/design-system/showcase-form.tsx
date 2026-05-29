@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Layers, Globe, Users, X } from "lucide-react";
 import { TextInput } from "./text-input";
@@ -32,7 +32,7 @@ export function ShowcaseForm() {
         <TextInput label="Project name" defaultValue="Design System v2" />
         <Textarea label="Description" optional placeholder="What is this project about…" />
         <div className="flex flex-col gap-[8px]">
-          <span className="text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
+          <span className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
             Category
           </span>
           <RadioDropdown
@@ -78,7 +78,7 @@ export function ShowcaseForm() {
 
       {/* Checkboxes */}
       <div>
-        <p className="text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0 mb-[8px]">
+        <p className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0 mb-[8px]">
           Notify me about
         </p>
         <div className="flex flex-col gap-[12px]">
@@ -90,7 +90,7 @@ export function ShowcaseForm() {
 
       {/* Toggles */}
       <div>
-        <p className="text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0 mb-[8px]">
+        <p className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0 mb-[8px]">
           Integrations
         </p>
         <div className="flex flex-col gap-[12px]">

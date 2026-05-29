@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
@@ -143,7 +143,7 @@ export function ContactCard({ children }: { children?: React.ReactNode }) {
                   <path d="M6.5 10.5L9 13.5L14 7" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <span className="font-sans font-medium text-[14px] leading-[18px] text-[#666] whitespace-nowrap">
+              <span className="font-sans font-medium text-ds-body text-[#666] whitespace-nowrap">
                 @vedantdzn
               </span>
             </div>
@@ -152,7 +152,7 @@ export function ContactCard({ children }: { children?: React.ReactNode }) {
           {/* Bio — stagger delay 140ms */}
           <span
             className={cn(
-              "font-sans font-medium text-[14px] leading-[18px] text-black whitespace-nowrap",
+              "font-sans font-medium text-ds-body text-black whitespace-nowrap",
               showText
                 ? "opacity-100 transition-opacity duration-150 delay-[140ms]"
                 : "opacity-0 transition-none",
@@ -164,7 +164,7 @@ export function ContactCard({ children }: { children?: React.ReactNode }) {
           {/* Stats — stagger delay 180ms */}
           <div
             className={cn(
-              "flex gap-[10px] font-sans font-medium text-[14px] leading-[18px] whitespace-nowrap",
+              "flex gap-[10px] font-sans font-medium text-ds-body whitespace-nowrap",
               showText
                 ? "opacity-100 transition-opacity duration-150 delay-[180ms]"
                 : "opacity-0 transition-none",
@@ -188,7 +188,7 @@ export function ContactCard({ children }: { children?: React.ReactNode }) {
         <button
           className={cn(
             "inline-flex items-center justify-center rounded-full py-[10px]",
-            "font-sans font-medium text-[16px] leading-[20px] whitespace-nowrap",
+            "font-sans font-medium text-ds-body whitespace-nowrap",
             "bg-transparent border-none",
             "transition-[color,scale] duration-150 ease-ds",
             "active:scale-[0.96] cursor-pointer select-none",

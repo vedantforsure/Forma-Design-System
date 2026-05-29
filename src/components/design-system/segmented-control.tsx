@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useLayoutEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -44,11 +44,11 @@ export function SegmentedControl<T extends string>({
 
   return (
     <div className={cn("flex flex-col gap-2 w-full", className)}>
-      <span className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+      <span className="text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
         {label}
       </span>
       {description && (
-        <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">
+        <p className="text-ds-body font-medium text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">
           {description}
         </p>
       )}
@@ -81,7 +81,7 @@ export function SegmentedControl<T extends string>({
               onClick={() => handleSelect(seg.value)}
               className={cn(
                 "relative z-10 inline-flex items-center gap-2 px-4 py-3 rounded-full",
-                "text-[16px] leading-[20px] font-medium",
+                "text-ds-body font-medium",
                 "transition-[color,scale] duration-150 ease-ds",
                 "active:scale-[0.96] cursor-pointer select-none",
                 active

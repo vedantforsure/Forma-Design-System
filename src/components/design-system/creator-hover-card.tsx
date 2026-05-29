@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState, useCallback, useEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -278,7 +278,7 @@ export function CreatorHoverCard({
             >
               {/* Name + badge */}
               <div className="flex items-center gap-1">
-                <span className="font-sans font-medium text-[16px] leading-[20px] text-black dark:text-white whitespace-nowrap">
+                <span className="font-sans font-medium text-ds-body text-black dark:text-white whitespace-nowrap">
                   {name}
                 </span>
                 {verified && (
@@ -296,7 +296,7 @@ export function CreatorHoverCard({
                 )}
               </div>
               {/* Handle */}
-              <span className="font-sans font-medium text-[14px] leading-[18px] text-[#666] dark:text-[#888] whitespace-nowrap">
+              <span className="font-sans font-medium text-ds-body text-[#666] dark:text-[#888] whitespace-nowrap">
                 {handle}
               </span>
             </div>
@@ -305,7 +305,7 @@ export function CreatorHoverCard({
           {/* ── Bio — stagger 20ms ──────────────────────────────── */}
           {bio && (
             <p
-              className="font-sans font-medium text-[14px] leading-[18px] text-black dark:text-white whitespace-nowrap m-0"
+              className="font-sans font-medium text-ds-body text-black dark:text-white whitespace-nowrap m-0"
               style={{
                 opacity:    showContent ? 1 : 0,
                 transform:  showContent ? "translateY(0px)" : "translateY(5px)",
@@ -319,7 +319,7 @@ export function CreatorHoverCard({
           {/* ── Stats — stagger 40ms ─────────────────────────────── */}
           {hasStats && (
             <div
-              className="flex gap-[10px] font-sans font-medium text-[14px] leading-[18px] whitespace-nowrap"
+              className="flex gap-[10px] font-sans font-medium text-ds-body whitespace-nowrap"
               style={{
                 opacity:    showContent ? 1 : 0,
                 transform:  showContent ? "translateY(0px)" : "translateY(5px)",

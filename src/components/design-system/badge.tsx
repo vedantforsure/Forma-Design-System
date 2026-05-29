@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+﻿import { cn } from "@/lib/utils";
 
 type BadgeVariant = "neutral" | "info" | "success" | "warning" | "error";
 
@@ -14,7 +14,7 @@ export function Badge({ variant = "neutral", label, dot = false, className }: Ba
     <span
       className={cn(
         "inline-flex items-center gap-[6px] px-2 py-[3px] rounded-full border",
-        "font-sans text-[14px] leading-[18px] font-medium whitespace-nowrap",
+        "font-sans text-ds-body font-medium whitespace-nowrap",
         className,
       )}
       style={{

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { PrimaryButton } from "@/components/design-system/primary-button";
 import { SecondaryButton } from "@/components/design-system/secondary-button";
 import { DestructiveButton } from "@/components/design-system/destructive-button";
@@ -10,7 +10,6 @@ import { ShowcaseForm } from "@/components/design-system/showcase-form";
 import { NavDropdown } from "@/components/design-system/nav-dropdown";
 import { ColorSwatch } from "@/components/design-system/color-swatch";
 import { ContactCard } from "@/components/design-system/contact-card";
-import { CreatorHoverCard } from "@/components/design-system/creator-hover-card";
 import { ToastDemo } from "@/components/design-system/toast-demo";
 import { OverlaysDemo } from "@/components/design-system/overlays-demo";
 import { Alert } from "@/components/design-system/alert";
@@ -51,8 +50,8 @@ const semantics = [
 const typeScale = [
   { name: "Display", size: "30px", lineHeight: "32px", weight: "500", letterSpacing: "-0.6px", sample: "The quick brown fox" },
   { name: "H1",      size: "24px", lineHeight: "30px", weight: "500", letterSpacing: "-0.2px", sample: "The quick brown fox" },
-  { name: "H2",      size: "14px", lineHeight: "18px", weight: "500", letterSpacing: "",        sample: "The quick brown fox" },
-  { name: "Body",    size: "14px", lineHeight: "20px", weight: "500", letterSpacing: "",        sample: "The quick brown fox jumps over the lazy dog", color: "text-ds-neutral-600 dark:text-ds-neutral-500" },
+  { name: "H2",      size: "16px", lineHeight: "20px", weight: "500", letterSpacing: "",        sample: "The quick brown fox" },
+  { name: "Body",    size: "16px", lineHeight: "20px", weight: "500", letterSpacing: "",        sample: "The quick brown fox jumps over the lazy dog", color: "text-ds-neutral-600 dark:text-ds-neutral-500" },
   { name: "Small",   size: "14px", lineHeight: "18px", weight: "500", letterSpacing: "",        sample: "The quick brown fox jumps over the lazy dog", color: "text-ds-neutral-450" },
   { name: "Buttons", size: "16px", lineHeight: "20px", weight: "500", letterSpacing: "",       sample: "Button label" },
 ];
@@ -152,7 +151,7 @@ const doneItems  = checklist.flatMap((s) => s.items).filter((i) => i.done).lengt
 
 // ── Shared text styles (our scale applied as class strings) ───────────────────
 // Label  → text-[12px] leading-[16px] font-medium uppercase tracking-widest
-// Body   → text-[14px] leading-[20px] font-normal
+// Body   → text-ds-body font-normal
 // Small  → text-[13px] leading-[18px] font-normal
 // Caption→ text-[11px] leading-[16px] font-normal
 
@@ -167,11 +166,11 @@ export default function Home() {
         <div className="flex items-start justify-between">
           <div>
             {/* Label */}
-            <p className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-3">
+            <p className="text-ds-small font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-3">
               Design System
             </p>
             {/* Display */}
-            <h1 className="text-[30px] leading-[32px] font-medium tracking-[-0.6px] text-ds-neutral-1000 dark:text-ds-neutral-0 text-balance">
+            <h1 className="text-ds-display font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 text-balance">
               Components
             </h1>
           </div>
@@ -182,13 +181,13 @@ export default function Home() {
 
         {/* ── Colors ── */}
         <section id="colors" className="scroll-mt-8">
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Colors
           </h2>
           <div className="flex flex-col gap-10">
             <div>
               {/* Caption sub-label */}
-              <p className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-4">Neutral</p>
+              <p className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-4">Neutral</p>
               <div className="flex gap-2 flex-wrap">
                 {neutrals.map((c) => (
                   <ColorSwatch key={c.token} label={c.token} hex={c.hex} />
@@ -196,7 +195,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <p className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-4">Semantic</p>
+              <p className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 mb-4">Semantic</p>
               <div className="flex gap-2">
                 {semantics.map((c) => (
                   <ColorSwatch key={c.label} label={c.label} hex={c.hex} />
@@ -210,16 +209,16 @@ export default function Home() {
 
         {/* ── Typography ── */}
         <section id="typography" className="scroll-mt-8">
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Typography
           </h2>
           <div className="flex flex-col divide-y divide-neutral-100 dark:divide-neutral-800">
             {typeScale.map((t) => (
               <div key={t.name} className="flex flex-col sm:flex-row sm:items-baseline items-start gap-2 sm:gap-12 py-4">
                 <div className="w-full sm:w-40 sm:shrink-0 flex flex-col gap-1">
-                  <span className="text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{t.name}</span>
+                  <span className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{t.name}</span>
                   {/* Caption for spec */}
-                  <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">
+                  <span className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">
                     {t.size} / {t.lineHeight} / {t.weight}{t.letterSpacing ? ` / ${t.letterSpacing}` : ""}
                   </span>
                 </div>
@@ -243,16 +242,16 @@ export default function Home() {
 
         {/* ── Spacing ── */}
         <section id="spacing" className="scroll-mt-8">
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Spacing
           </h2>
           <div className="flex flex-col gap-3">
             {spacingTokens.map((s) => (
               <div key={s.name} className="flex items-center gap-8">
-                <span className="w-6 shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{s.name}</span>
-                <span className="w-12 shrink-0 text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500">{s.px}px</span>
+                <span className="w-6 shrink-0 text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{s.name}</span>
+                <span className="w-12 shrink-0 text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500">{s.px}px</span>
                 <div className="h-[6px] rounded-full bg-ds-neutral-1000 dark:bg-ds-neutral-0 shrink-0" style={{ width: s.px }} />
-                <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">{s.usage}</span>
+                <span className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">{s.usage}</span>
               </div>
             ))}
           </div>
@@ -262,7 +261,7 @@ export default function Home() {
 
         {/* ── Shadows ── */}
         <section id="shadows" className="scroll-mt-8">
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Shadows
           </h2>
           <div className="flex gap-8 flex-wrap">
@@ -270,8 +269,8 @@ export default function Home() {
               <div key={s.name} className="flex flex-col gap-4">
                 <div className="w-32 h-20 rounded-xl bg-white dark:bg-neutral-800" style={{ boxShadow: s.value }} />
                 <div className="flex flex-col gap-0.5">
-                  <span className="text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{s.name}</span>
-                  <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">{s.usage}</span>
+                  <span className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{s.name}</span>
+                  <span className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">{s.usage}</span>
                 </div>
               </div>
             ))}
@@ -282,18 +281,18 @@ export default function Home() {
 
         {/* ── Motion ── */}
         <section id="motion" className="scroll-mt-8">
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Motion
           </h2>
           <div className="flex flex-col gap-6">
             {motionTokens.map((m) => (
               <div key={m.name} className="flex flex-col sm:flex-row sm:items-center items-start gap-3 sm:gap-10">
                 <div className="w-full sm:w-40 sm:shrink-0 flex flex-col gap-1">
-                  <span className="text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{m.name}</span>
-                  <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">{m.duration} · {m.easing}</span>
+                  <span className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">{m.name}</span>
+                  <span className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500 font-mono">{m.duration} · {m.easing}</span>
                 </div>
                 <MotionSwatch duration={m.duration} easing={m.easing} />
-                <span className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500">{m.usage}</span>
+                <span className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500">{m.usage}</span>
               </div>
             ))}
           </div>
@@ -303,7 +302,7 @@ export default function Home() {
 
         {/* ── Forms ── */}
         <section id="forms" className="scroll-mt-8">
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Forms
           </h2>
           <ShowcaseForm />
@@ -313,7 +312,7 @@ export default function Home() {
 
         {/* ── Buttons ── */}
         <section id="buttons" className="scroll-mt-8">
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Buttons
           </h2>
           <div className="flex flex-col gap-8">
@@ -329,7 +328,7 @@ export default function Home() {
 
         {/* ── Feedback ── */}
         <section id="feedback" className="scroll-mt-8">
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Feedback
           </h2>
           <div className="flex flex-col gap-8">
@@ -345,7 +344,7 @@ export default function Home() {
               </div>
             </ComponentRow>
             <div id="feedback-alert" className="flex flex-col sm:flex-row items-start gap-2 sm:gap-12 scroll-mt-8">
-              <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 sm:pt-4">
+              <span className="sm:w-40 sm:shrink-0 text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 sm:pt-4">
                 Alert
               </span>
               <div className="flex flex-col gap-3 sm:w-[400px]">
@@ -362,7 +361,7 @@ export default function Home() {
 
         {/* ── Overlays ── */}
         <section id="overlays" className="scroll-mt-8">
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Overlays
           </h2>
           <OverlaysDemo />
@@ -372,14 +371,14 @@ export default function Home() {
 
         {/* ── Data Display ── */}
         <section>
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Data Display
           </h2>
           <div className="flex flex-col gap-8">
 
             {/* Card */}
             <div id="dd-card" className="flex flex-col sm:flex-row items-start gap-2 sm:gap-12 scroll-mt-8">
-              <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
+              <span className="sm:w-40 sm:shrink-0 text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
                 Card
               </span>
               <Card className="w-[280px]">
@@ -393,7 +392,7 @@ export default function Home() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500">
+                  <p className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500">
                     Building polished, purposeful interfaces that feel natural to use.
                   </p>
                 </CardContent>
@@ -421,7 +420,7 @@ export default function Home() {
 
             {/* Table */}
             <div id="dd-table" className="flex flex-col sm:flex-row items-start gap-2 sm:gap-12 scroll-mt-8">
-              <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
+              <span className="sm:w-40 sm:shrink-0 text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
                 Table
               </span>
               <ComponentTableDemo />
@@ -434,13 +433,13 @@ export default function Home() {
 
         {/* ── Navigation ── */}
         <section>
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
+          <h2 className="text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
             Navigation
           </h2>
           <div className="flex flex-col gap-8">
 
             <div id="nav-tabs" className="flex flex-col sm:flex-row items-start gap-2 sm:gap-12 scroll-mt-8">
-              <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
+              <span className="sm:w-40 sm:shrink-0 text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
                 Tabs
               </span>
               <Tabs
@@ -467,41 +466,13 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-[50px]" />
-
-        {/* ── Interactions ── */}
-        <section>
-          <h2 className="text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 mb-10 text-balance">
-            Interactions
-          </h2>
-          <div className="flex flex-col gap-8">
-            <ComponentRow label="Creator Hover Card">
-              <div className="py-20">
-                <p className="text-[15px] leading-[24px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500">
-                  Made with love by{" "}
-                  <CreatorHoverCard
-                    name="Vedant"
-                    handle="@vedantdzn"
-                    avatarSrc="/x-pfp.jpg"
-                    bio="Product designer"
-                    following={124}
-                    followers={150}
-                    verified
-                  >
-                    Vedant
-                  </CreatorHoverCard>
-                </p>
-              </div>
-            </ComponentRow>
-          </div>
-        </section>
 
       </main>
 
       <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3">
         <Link
           href="/experiments"
-          className="inline-flex items-center justify-center h-[40px] px-4 rounded-full border border-black/16 dark:border-white/16 font-sans font-medium text-[16px] leading-[20px] text-black dark:text-white whitespace-nowrap bg-white dark:bg-ds-neutral-950 transition-[background-color,scale] duration-150 ease-ds active:scale-[0.96] hfine:hover:bg-ds-neutral-100 dark:hfine:hover:bg-ds-neutral-900 active:bg-ds-neutral-400 dark:active:bg-ds-neutral-700 cursor-pointer select-none"
+          className="inline-flex items-center justify-center h-[40px] px-4 rounded-full border border-black/16 dark:border-white/16 font-sans font-medium text-ds-body text-black dark:text-white whitespace-nowrap bg-white dark:bg-ds-neutral-950 transition-[background-color,scale] duration-150 ease-ds active:scale-[0.96] hfine:hover:bg-ds-neutral-100 dark:hfine:hover:bg-ds-neutral-900 active:bg-ds-neutral-400 dark:active:bg-ds-neutral-700 cursor-pointer select-none"
         >
           Experiments
         </Link>
@@ -516,7 +487,7 @@ export default function Home() {
 function ComponentRow({ label, children, id }: { label: string; children: React.ReactNode; id?: string }) {
   return (
     <div id={id} className="flex flex-col sm:flex-row sm:items-center items-start gap-2 sm:gap-12 scroll-mt-8">
-      <span className="sm:w-40 sm:shrink-0 text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
+      <span className="sm:w-40 sm:shrink-0 text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0">
         {label}
       </span>
       <div className="flex items-center gap-4">{children}</div>

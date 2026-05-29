@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,7 @@ export function PrimaryButton({
         // Border
         "border border-black/8 dark:border-white/8",
         // Typography — Geist Medium 16/20
-        "font-sans font-medium text-[16px] leading-[20px] text-white dark:text-black whitespace-nowrap",
+        "font-sans font-medium text-ds-body text-white dark:text-black whitespace-nowrap",
         // Colors & transitions
         "bg-black dark:bg-white",
         "transition-[background-color,scale] duration-150 ease-ds",

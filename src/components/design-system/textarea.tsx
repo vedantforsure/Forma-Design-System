@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { TextareaHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
@@ -15,7 +15,7 @@ export function Textarea({ label, optional, className, id, ...props }: TextareaP
     <div className="flex flex-col gap-2 w-full">
       <label
         htmlFor={inputId}
-        className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0"
+        className="text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0"
       >
         {label}
         {optional && (
@@ -30,7 +30,7 @@ export function Textarea({ label, optional, className, id, ...props }: TextareaP
         className={cn(
           "w-full rounded-2xl px-4 py-3",
           "border-[1.5px] border-black/12 dark:border-white/12",
-          "text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0",
+          "text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0",
           "placeholder:font-normal placeholder:text-ds-neutral-500 dark:placeholder:text-ds-neutral-600",
           "bg-white dark:bg-ds-neutral-950",
           "outline-none resize-y",

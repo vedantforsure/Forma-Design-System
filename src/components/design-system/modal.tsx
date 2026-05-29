@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { IconButton } from "./icon-button";
@@ -81,7 +81,7 @@ export function Modal({
       >
         {/* Header */}
         <div className="flex items-center justify-between gap-4">
-          <h2 id="modal-title" className="font-sans text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+          <h2 id="modal-title" className="font-sans text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
             {title}
           </h2>
           <IconButton
@@ -97,7 +97,7 @@ export function Modal({
 
         {/* Body */}
         {description && (
-          <p className="font-sans text-[14px] leading-[20px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500">
+          <p className="font-sans text-ds-body font-medium text-ds-neutral-600 dark:text-ds-neutral-500">
             {description}
           </p>
         )}

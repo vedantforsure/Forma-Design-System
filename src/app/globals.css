@@ -50,6 +50,27 @@
 }
 
 @theme inline {
+  /* Design system type scale */
+  --text-ds-display: 30px;
+  --text-ds-display--line-height: 32px;
+  --text-ds-display--letter-spacing: -0.6px;
+
+  --text-ds-h1: 24px;
+  --text-ds-h1--line-height: 30px;
+  --text-ds-h1--letter-spacing: -0.2px;
+
+  --text-ds-h2: 16px;
+  --text-ds-h2--line-height: 20px;
+
+  --text-ds-body: 16px;
+  --text-ds-body--line-height: 20px;
+
+  --text-ds-small: 14px;
+  --text-ds-small--line-height: 18px;
+
+  --text-ds-buttons: 16px;
+  --text-ds-buttons--line-height: 20px;
+
   /* Design system neutral scale */
   --color-ds-neutral-0:    var(--ds-neutral-0);
   --color-ds-neutral-50:   var(--ds-neutral-50);

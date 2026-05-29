@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useCallback } from "react";
 import { Tag, X, ChevronDown } from "lucide-react";
@@ -51,7 +51,7 @@ export function TagInput({
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <span className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+      <span className="text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
         {label}
         {optional && (
           <span className="text-ds-neutral-500 font-normal"> (Optional)</span>
@@ -74,7 +74,7 @@ export function TagInput({
           <span
             key={tag}
             className={cn(
-              "tag-pill inline-flex items-center gap-1 px-3 py-2 rounded-full border-[1.5px] border-black/12 dark:border-white/12 text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 shrink-0",
+              "tag-pill inline-flex items-center gap-1 px-3 py-2 rounded-full border-[1.5px] border-black/12 dark:border-white/12 text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 shrink-0",
               removingTags.has(tag) && "is-removing"
             )}
           >
@@ -96,7 +96,7 @@ export function TagInput({
           onKeyDown={handleKeyDown}
           onBlur={() => addTag(input)}
           placeholder={tags.length === 0 ? "Add tags…" : ""}
-          className="flex-1 min-w-[80px] text-[14px] leading-[18px] font-medium bg-transparent outline-none text-ds-neutral-1000 dark:text-ds-neutral-0 placeholder:text-ds-neutral-400"
+          className="flex-1 min-w-[80px] text-ds-body font-medium bg-transparent outline-none text-ds-neutral-1000 dark:text-ds-neutral-0 placeholder:text-ds-neutral-400"
         />
 
         <ChevronDown className="w-5 h-5 text-ds-neutral-500 shrink-0 ml-auto" strokeWidth={1.5} />

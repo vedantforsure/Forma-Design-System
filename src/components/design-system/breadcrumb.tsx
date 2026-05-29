@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+﻿import { cn } from "@/lib/utils";
 
 export interface BreadcrumbItem {
   label: string;
@@ -20,14 +20,14 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
             {isLast ? (
               <span
                 aria-current="page"
-                className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0"
+                className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0"
               >
                 {item.label}
               </span>
             ) : (
               <a
                 href={item.href ?? "#"}
-                className="text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-450 transition-colors duration-150 ease-ds hfine:hover:text-ds-neutral-700 dark:hfine:hover:text-ds-neutral-300"
+                className="text-ds-body font-medium tracking-[0.4px] text-ds-neutral-450 transition-colors duration-150 ease-ds hfine:hover:text-ds-neutral-700 dark:hfine:hover:text-ds-neutral-300"
               >
                 {item.label}
               </a>
@@ -35,7 +35,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
             {!isLast && (
               <span
                 aria-hidden
-                className="mx-[6px] text-[14px] leading-[20px] font-medium text-ds-neutral-300 dark:text-ds-neutral-700 select-none"
+                className="mx-[6px] text-ds-body font-medium text-ds-neutral-300 dark:text-ds-neutral-700 select-none"
               >
                 /
               </span>

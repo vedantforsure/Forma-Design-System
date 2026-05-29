@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -56,7 +56,7 @@ export function Tabs({ tabs, defaultValue, onChange, className }: TabsProps) {
             onClick={() => handleSelect(tab.value)}
             className={cn(
               "px-3 pb-2 cursor-pointer select-none whitespace-nowrap",
-              "text-[14px] leading-[20px] font-medium tracking-[0.4px]",
+              "text-ds-body font-medium tracking-[0.4px]",
               "transition-colors duration-150 ease-ds",
               active === tab.value
                 ? "text-ds-neutral-1000 dark:text-ds-neutral-0"

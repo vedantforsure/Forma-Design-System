@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useCallback, useRef, useId } from "react";
 import { cn } from "@/lib/utils";
@@ -64,7 +64,7 @@ export function Tooltip({ content, side = "top", children, className }: TooltipP
         className={cn(
           "pointer-events-none absolute z-50 w-max max-w-[200px]",
           "px-2 py-1 rounded-[4px]",
-          "font-sans text-[14px] leading-[18px] font-medium",
+          "font-sans text-ds-body font-medium",
           "bg-[#111111] text-white dark:bg-white dark:text-[#111111]",
           className,
         )}

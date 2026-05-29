@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { FileText, X, Globe, Users } from "lucide-react";
 import { TextInput } from "./text-input";
@@ -32,10 +32,10 @@ export function UploadForm() {
 
         {/* Access section */}
         <div className="flex flex-col gap-2">
-          <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+          <p className="text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
             Document access
           </p>
-          <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">
+          <p className="text-ds-body font-medium text-ds-neutral-600 dark:text-ds-neutral-500 text-pretty">
             Select who you would like to have access to this document. Visit our help centre to learn more about uploaded document access.
           </p>
         </div>

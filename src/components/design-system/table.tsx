@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -50,7 +50,7 @@ export function Table<T extends object>({ columns, rows, className }: TableProps
                   onClick={() => handleSort(col.key)}
                   className={cn(
                     "pb-3 pr-8 last:pr-0 cursor-pointer select-none",
-                    "text-[14px] leading-[18px] font-medium tracking-[0.4px]",
+                    "text-ds-body font-medium tracking-[0.4px]",
                     "text-ds-neutral-1000 dark:text-ds-neutral-0",
                     col.align === "right"  ? "text-right"  :
                     col.align === "center" ? "text-center" : "text-left",
@@ -89,7 +89,7 @@ export function Table<T extends object>({ columns, rows, className }: TableProps
                   key={String(col.key)}
                   className={cn(
                     "py-3 pr-8 last:pr-0",
-                    "text-[14px] leading-[20px] font-medium tracking-[0.4px]",
+                    "text-ds-body font-medium tracking-[0.4px]",
                     "text-ds-neutral-600 dark:text-ds-neutral-500",
                     col.align === "right"  ? "text-right"  :
                     col.align === "center" ? "text-center" : "text-left",

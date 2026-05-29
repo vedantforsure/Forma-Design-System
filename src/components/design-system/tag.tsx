@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { cn } from "@/lib/utils";
 
@@ -19,7 +19,7 @@ export function Tag({ label, onRemove, removing = false, className }: TagProps) 
         "px-[10px] py-[3px] rounded-full",
         "bg-white dark:bg-ds-neutral-950",
         "border border-black/16 dark:border-white/16",
-        "text-[14px] leading-[18px] font-medium tracking-[0.4px]",
+        "text-ds-body font-medium tracking-[0.4px]",
         "text-ds-neutral-700 dark:text-ds-neutral-300",
         onRemove && "cursor-pointer transition-colors duration-150 hfine:hover:bg-ds-neutral-100 dark:hfine:hover:bg-ds-neutral-900 active:bg-ds-neutral-400 dark:active:bg-ds-neutral-700",
         removing && "is-removing",

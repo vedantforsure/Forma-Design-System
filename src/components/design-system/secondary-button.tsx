@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
@@ -19,7 +19,7 @@ export function SecondaryButton({
         "px-4 py-2",
         "rounded-full",
         "border border-black/16 dark:border-white/16",
-        "font-sans font-medium text-[16px] leading-[20px] text-black dark:text-white whitespace-nowrap",
+        "font-sans font-medium text-ds-body text-black dark:text-white whitespace-nowrap",
         "bg-white dark:bg-ds-neutral-950",
         "transition-[background-color,scale] duration-150 ease-ds",
         "active:scale-[0.96]",

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect, useId } from "react";
 import { ChevronDown } from "lucide-react";
@@ -53,7 +53,7 @@ export function RadioDropdown({ label, options, defaultValue = "", onChange }: R
         className={[
           "h-[40px] pl-[14px] pr-[10px] flex items-center gap-2",
           "rounded-full border border-black/16 dark:border-white/16",
-          "font-sans font-medium text-[16px] leading-[20px] text-black dark:text-white",
+          "font-sans font-medium text-ds-body text-black dark:text-white",
           "cursor-pointer select-none outline-none",
           "transition-[background-color,scale] duration-150 ease-ds",
           "active:scale-[0.96]",
@@ -106,7 +106,7 @@ export function RadioDropdown({ label, options, defaultValue = "", onChange }: R
                   : "bg-white dark:bg-ds-neutral-900 hover:bg-ds-neutral-100 dark:hover:bg-ds-neutral-800 active:bg-ds-neutral-100 dark:active:bg-ds-neutral-800",
               ].join(" ")}
             >
-              <span className="flex-1 text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 min-w-0">
+              <span className="flex-1 text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0 min-w-0">
                 {opt.label}
               </span>
               <div

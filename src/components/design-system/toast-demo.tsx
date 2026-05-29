@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { toast } from "sonner";
 
@@ -17,7 +17,7 @@ export function ToastDemo() {
         <button
           key={label}
           onClick={action}
-          className="inline-flex items-center justify-center rounded-full px-4 py-[10px] font-sans font-medium text-[16px] leading-[20px] bg-transparent border border-black/12 dark:border-white/12 text-ds-neutral-1000 dark:text-ds-neutral-0 transition-[opacity,scale] duration-150 active:scale-[0.96] cursor-pointer select-none hfine:hover:opacity-70"
+          className="inline-flex items-center justify-center rounded-full px-4 py-[10px] font-sans font-medium text-ds-body bg-transparent border border-black/12 dark:border-white/12 text-ds-neutral-1000 dark:text-ds-neutral-0 transition-[opacity,scale] duration-150 active:scale-[0.96] cursor-pointer select-none hfine:hover:opacity-70"
         >
           {label}
         </button>

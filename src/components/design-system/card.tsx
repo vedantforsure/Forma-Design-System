@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+﻿import { cn } from "@/lib/utils";
 
 interface SlotProps {
   className?: string;
@@ -27,7 +27,7 @@ export function CardTitle({ className, children }: SlotProps) {
   return (
     <h3
       className={cn(
-        "text-[14px] leading-[18px] font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0",
+        "text-ds-body font-medium tracking-[0.4px] text-ds-neutral-1000 dark:text-ds-neutral-0",
         className,
       )}
     >
@@ -40,7 +40,7 @@ export function CardDescription({ className, children }: SlotProps) {
   return (
     <p
       className={cn(
-        "text-[14px] leading-[20px] font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500",
+        "text-ds-body font-medium tracking-[0.4px] text-ds-neutral-600 dark:text-ds-neutral-500",
         className,
       )}
     >

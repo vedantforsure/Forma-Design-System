@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+﻿import { cn } from "@/lib/utils";
 
 type AlertVariant = "info" | "success" | "warning" | "error";
 
@@ -20,11 +20,11 @@ export function Alert({ variant, title, description, className }: AlertProps) {
         color:           `var(--alert-${variant}-text)`,
       }}
     >
-      <span className="font-sans text-[14px] leading-[20px] font-medium tracking-[0.4px]">
+      <span className="font-sans text-ds-body font-medium tracking-[0.4px]">
         {title}
       </span>
       {description && (
-        <span className="font-sans text-[14px] leading-[20px] font-medium tracking-[0.4px] opacity-80">
+        <span className="font-sans text-ds-body font-medium tracking-[0.4px] opacity-80">
           {description}
         </span>
       )}

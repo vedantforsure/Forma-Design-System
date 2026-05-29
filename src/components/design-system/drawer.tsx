@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -78,7 +78,7 @@ export function Drawer({ open, onClose, side = "right", title, children }: Drawe
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-black/[0.08] dark:border-white/[0.08] shrink-0">
-          <h2 id="drawer-title" className="font-sans text-[24px] leading-[30px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+          <h2 id="drawer-title" className="font-sans text-ds-h1 font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
             {title}
           </h2>
           <IconButton

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Settings } from "lucide-react";
 import { Textarea } from "./textarea";
@@ -42,7 +42,7 @@ export function PreferencesForm() {
 
         {/* Checkboxes */}
         <div className="flex flex-col gap-4">
-          <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+          <p className="text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
             Email me about
           </p>
           <Checkbox label="Product updates"  description="New features and improvements" defaultChecked />
@@ -52,7 +52,7 @@ export function PreferencesForm() {
 
         {/* Toggles */}
         <div className="flex flex-col gap-4">
-          <p className="text-[14px] leading-[18px] font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
+          <p className="text-ds-body font-medium text-ds-neutral-1000 dark:text-ds-neutral-0">
             Integrations
           </p>
           <Toggle label="Slack notifications" description="Send alerts to your Slack workspace" defaultChecked />

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
 import { ChevronUp } from "lucide-react";
@@ -45,11 +45,8 @@ export function NavDropdown({ checklist, doneItems, totalItems }: NavDropdownPro
       >
         {/* Header */}
         <div className="px-4 pt-4 pb-3 border-b border-black/6 dark:border-white/6">
-          <p className="text-[11px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-600 dark:text-ds-neutral-500">
-            Progress
-          </p>
-          <p className="text-[13px] leading-[18px] text-ds-neutral-600 dark:text-ds-neutral-500 mt-0.5 tabular-nums">
-            {doneItems} / {totalItems} done
+          <p className="text-[11px] leading-[16px] font-medium uppercase tracking-widest text-ds-neutral-1000 dark:text-ds-neutral-0">
+            Components
           </p>
         </div>
 
@@ -57,7 +54,7 @@ export function NavDropdown({ checklist, doneItems, totalItems }: NavDropdownPro
         <div className="p-3 flex flex-row flex-wrap gap-1 items-start">
           {checklist.map((group) => (
             <div key={group.section}>
-              <p className="text-[10px] leading-[14px] font-medium uppercase tracking-widest text-neutral-300 dark:text-neutral-600 px-2.5 pt-3 pb-1.5">
+              <p className="text-ds-body font-medium text-ds-neutral-600 dark:text-ds-neutral-500 px-2.5 pt-3 pb-1.5">
                 {group.section}
               </p>
               <div className="flex flex-col">
@@ -77,34 +74,7 @@ export function NavDropdown({ checklist, doneItems, totalItems }: NavDropdownPro
                       item.sectionId ? "cursor-pointer hfine:hover:bg-ds-neutral-100 dark:hfine:hover:bg-ds-neutral-800" : "cursor-default",
                     ].join(" ")}
                   >
-                    <div
-                      className={[
-                        "w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0",
-                        item.done
-                          ? "bg-neutral-900 dark:bg-neutral-100 border-neutral-900 dark:border-neutral-100"
-                          : "border-neutral-200 dark:border-neutral-700",
-                      ].join(" ")}
-                    >
-                      {item.done && (
-                        <svg width="7" height="5" viewBox="0 0 7 5" fill="none">
-                          <path
-                            d="M1 2.5L2.5 4L6 1"
-                            className="stroke-white dark:stroke-neutral-900"
-                            strokeWidth="1.2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      )}
-                    </div>
-                    <span
-                      className={[
-                        "text-[13px] leading-[18px]",
-                        item.done
-                          ? "text-ds-neutral-1000 dark:text-ds-neutral-0"
-                          : "text-ds-neutral-600 dark:text-ds-neutral-500",
-                      ].join(" ")}
-                    >
+                    <span className="text-ds-body text-ds-neutral-1000 dark:text-ds-neutral-0">
                       {item.label}
                     </span>
                   </button>
@@ -121,7 +91,7 @@ export function NavDropdown({ checklist, doneItems, totalItems }: NavDropdownPro
         className={[
           "h-[40px] pl-[14px] pr-[10px] flex items-center gap-2",
           "rounded-full border border-black/16 dark:border-white/16",
-          "font-sans font-medium text-[16px] leading-[20px] text-black dark:text-white",
+          "font-sans font-medium text-ds-body text-black dark:text-white",
           "bg-white dark:bg-ds-neutral-950",
           "cursor-pointer select-none outline-none",
           "transition-[background-color,scale] duration-150 ease-ds",
@@ -130,8 +100,8 @@ export function NavDropdown({ checklist, doneItems, totalItems }: NavDropdownPro
           "active:bg-ds-neutral-400 dark:active:bg-ds-neutral-700",
         ].join(" ")}
       >
-        <span className="whitespace-nowrap tabular-nums">
-          Progress · {doneItems}/{totalItems}
+        <span className="whitespace-nowrap">
+          Components
         </span>
         <ChevronUp
           className="w-4 h-4 shrink-0"
